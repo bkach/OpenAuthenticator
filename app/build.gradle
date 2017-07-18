@@ -1,0 +1,62 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+}
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.github.bkach.openauthenticator"
+        minSdkVersion 21
+        targetSdkVersion 26
+        versionCode 1
+        versionName "0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        debug {
+            ext.enableCrashlytics = false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:26.0.0-beta2'
+    testImplementation 'junit:junit:4.12'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+
+    // Apache commons
+    compile 'commons-codec:commons-codec:1.10'
+
+    // RxJava
+    compile "io.reactivex.rxjava2:rxjava:2.1.0"
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    // Zxing
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0'
+
+    compile('com.crashlytics.sdk.android:crashlytics:2.6.8@aar') {
+        transitive = true;
+    }
+}
+
+configurations {
+    compile.exclude group: "org.apache.httpcomponents", module: "httpclient"
+}
