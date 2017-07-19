@@ -7,7 +7,12 @@ An authenticator similar to Google Authenticator which syncs to Dropbox and Goog
 
 ## Blackbox GPG key encryption
 
-The keys to the Fabric apis (the key and secret) are stored in `app/fabric.properties` and encrypted using [Blackbox](https://github.com/StackExchange/blackbox). Please read the documentation!
+__This is not necessary in debug builds__
+
+The keys to the Fabric apis (the key and secret) are stored in `app/fabric.properties` and encrypted using [Blackbox](https://github.com/StackExchange/blackbox). Install Blackbox in order to be able to decrypt the file.
+
+
+### Add User
 
 If you would like to be added as a user in order to change the `fabric.properties` file, follow [these](https://github.com/StackExchange/blackbox#how-to-indoctrinate-a-new-user-into-the-system) instructions.
 
@@ -16,6 +21,13 @@ Essentially, you should:
 - Create a GPG key if you had not already
 - Add yourself as an admin in the repo
 - Add a commit including the pubring, trustdb, and blackbox-admin.txt files
+
+### Encryption / Decryption
+
+At the moment only a the `fabric.properties` file is encrypted. In order to decrypt the file, run `blackbox_edit_start app/fabric.properties.gpg`.
+Once finished and **before** committing make sure to run `blackbox_edit_end app/fabric.properties.gpg`.
+
+There are also the convenience files `script/lock` and `script/unlock` which run these commands.
 
 ## Notes
 
