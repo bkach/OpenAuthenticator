@@ -6,9 +6,9 @@ import android.support.annotation.NonNull
 import io.reactivex.disposables.Disposable
 
 /**
- * {Description}
+ * Class used to contain all the logic about how a view is meant to be presented
  *
- * @author boris@ustwo.com
+ * @author Boris Kachscovsky
  */
 abstract class Presenter<T> {
 

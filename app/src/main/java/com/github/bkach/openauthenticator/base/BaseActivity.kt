@@ -11,7 +11,7 @@ import com.crashlytics.android.core.CrashlyticsCore
 /**
  * Base Activity, all activities should subclass this Activity
  *
- * @author boris@ustwo.com
+ * @author Boris Kachscovsky
  */
 abstract class BaseActivity<T> : Activity() {
 

@@ -5,7 +5,7 @@ import com.github.bkach.openauthenticator.base.Presenter
 /**
  * {Description}
  *
- * @author boris@ustwo.com
+ * @author Boris Kachscovsky
  */
 class CodeListPresenter : Presenter<CodeListPresenter.View>() {
 

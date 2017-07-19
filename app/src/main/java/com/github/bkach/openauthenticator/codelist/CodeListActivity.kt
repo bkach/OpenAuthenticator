@@ -6,6 +6,12 @@ import com.github.bkach.openauthenticator.R
 import com.github.bkach.openauthenticator.base.BaseActivity
 import com.github.bkach.openauthenticator.base.Presenter
 
+/**
+ * The Activity which displays a list of codes. This is the view to the presenter.
+ *
+ * @see CodeListPresenter
+ * @author Boris Kachscovsky
+ */
 class CodeListActivity : BaseActivity<CodeListPresenter.View>(), CodeListPresenter.View {
 
     override fun getLayoutResourceId(): Int {

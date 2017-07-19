@@ -15,7 +15,7 @@ import javax.crypto.spec.SecretKeySpec;
 /**
  * This is a temporary class to show how to calculate the authenticator code
  *
- * @author boris@ustwo.com
+ * @author Boris Kachscovsky
  */
 
 public class Authenticator {
